@@ -43,7 +43,7 @@ Lastly, the (¬(p ∧ q) ∨ a<sub>1</sub>), which becomes (¬p ∨ ¬q ∨ a<su
 
 **¬a<sub>2</sub> ∧ (¬a<sub>2</sub> ∨ r ∨ ¬a<sub>1</sub>) ∧ (¬r ∨ a<sub>2</sub>) ∧ (a<sub>1</sub> ∨ a<sub>2</sub>) ∧ (¬a<sub>1</sub> ∨ p) ∧ (¬a<sub>1</sub> ∨ q) ∧ (¬p ∨ ¬q ∨ a<sub>1</sub>)**
 
-I don't have a simple and fast way of verifying this solution, but I'm reasonably confident in the process that I took to reach it. It's definitely in CNF and I don't think I made any major logical missteps when simplifying it (although it's possible my best-guess Tseytin transformation was done incorrectly).
+I don't have a simple and fast way of verifying this solution, but I'm reasonably confident in the process that I took to reach it. It's definitely in CNF and I don't think I made any major logical missteps when simplifying it (although it's possible my best-guess Tseytin transformation was done incorrectly). I thought this was a fun problem to work through and I learned quite a bit (as well as refreshed my boolean logic).
 
 ## Question 5
 
@@ -91,7 +91,7 @@ The solver then guessed that x<sub>2</sub> = True. This meant that x<sub>4</sub>
 
 These assignments led to a contradition, as the (¬x<sub>3</sub> ∨ ¬x<sub>2</sub> ∨ x<sub>4</sub>) clause is no longer satisfiable. This causes the solver to backtrack all the way to the start.
 
-The solver then tries x<sub>1</sub> = False:
+The solver then tries **x<sub>1</sub> = False**:
 ```
 c LOG 0 checking increasing variable index false assignment
 c LOG 1 search decide -1
@@ -104,10 +104,10 @@ c LOG 1 propagating 3
 c LOG 1 propagating 4
 c LOG 1 propagating -2
 ```
-The solver finds that x<sub>3</sub> = True due to the (x<sub>1</sub> ∨ x<sub>3</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>3</sub> = 1) to the implication graph.
+The solver finds that **x<sub>3</sub> = True** due to the (x<sub>1</sub> ∨ x<sub>3</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>3</sub> = 1) to the implication graph.
 
-The solver then finds that x<sub>4</sub> = True due to the (x<sub>1</sub> ∨ x<sub>4</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>4</sub> = 1) to the implication graph.
+The solver then finds that **x<sub>4</sub> = True** due to the (x<sub>1</sub> ∨ x<sub>4</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>4</sub> = 1) to the implication graph.
 
-Lastly, the solver finds that x<sub>2</sub> = False due to the (¬x<sub>2</sub> ∨ x<sub>1</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>2</sub> = 0) to the implication graph.
+Lastly, the solver finds that **x<sub>2</sub> = False** due to the (¬x<sub>2</sub> ∨ x<sub>1</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>2</sub> = 0) to the implication graph.
 
-These assignments do not produce a contradiction and are taken as the proof that the problem is satisfiable.
+These assignments do not produce a contradiction and are taken as the proof that the problem is satisfiable. Overall, I enjoyed walking through this process and learning the mechanics behind boolean satisfiability solvers. I think it's interesting that the solvers operate on a (vastly optimized) guess-and-check framework.
