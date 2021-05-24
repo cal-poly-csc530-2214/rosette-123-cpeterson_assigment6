@@ -1,7 +1,18 @@
-# rosette-123-cpeterson_assigment6
-rosette-123-cpeterson_assigment6 created by GitHub Classroom
+# Assignment 6: Rosette 123/Homework 1 by Christopher Peterson
 
-## Question 2
+## Contents <a name="contents"></a>
+- [What I did](#what)
+    - [Question 2](#2)
+    - [Question 5](#5)
+    - [Question 6](#6)
+    - [Question 8](#8)
+- [Conclusion and Future Work](#conclusion)
+
+## What I did <a name="what"></a>
+
+I had no prior experience with Racket at all going into this assignment. I chose to focus on the homework questions that did not require its use, since I didn't want to spend all of my time learning a new language with no results to show for it. Unfortunately, this meant that I missed out on some of the core Rosette stuff, which part of me was looking forward to experimenting with. I wasn't personally interested in the problems which required proofs (since I was rusty on the material), so I stuck with Questions 2, 5, 6, and 8. I spent a little over an hour on each question, along with some time surveying the entire assignment and looking for problems I was interested in.
+
+# Question 2 <a name="2"></a>
 
 Question 2 looked fairly daunting, but doable. This took a little over an hour since I wasn't familiar with Tseytin transformation and my prepositional logic was rusty.
 
@@ -45,7 +56,7 @@ Lastly, the (¬(p ∧ q) ∨ a<sub>1</sub>), which becomes (¬p ∨ ¬q ∨ a<su
 
 I don't have a simple and fast way of verifying this solution, but I'm reasonably confident in the process that I took to reach it. It's definitely in CNF and I don't think I made any major logical missteps when simplifying it (although it's possible my best-guess Tseytin transformation was done incorrectly). I thought this was a fun problem to work through and I learned quite a bit (as well as refreshed my boolean logic).
 
-## Question 5
+# Question 5 <a name="5"></a>
 
 Question 5 looked doable. It took me around 10 minutes to set up CaDiCaL and produce ``cadical_output.txt`` using Cygwin. It took me around another hour to learn about CDCL, understand & parse the log file, and produce this writeup. For the sake of time, I'm going to describe the algorithm's process informally instead of the explicit writeup and implication graph mentioned in the homework.
 
@@ -112,7 +123,7 @@ Lastly, the solver finds that **x<sub>2</sub> = False** due to the (¬x<sub>2</s
 
 These assignments do not produce a contradiction and are taken as the proof that the problem is satisfiable. Overall, I enjoyed walking through this process and learning the mechanics behind boolean satisfiability solvers. I think it's interesting that the solvers operate on a (vastly optimized) guess-and-check framework.
 
-## Question 6
+# Question 6 <a name="6"></a>
 
 The rest of the problems seemed to rely on Question 6. This problem took me around an hour to figure out, with the time evenly spent across the problems.
 
@@ -125,7 +136,7 @@ Github's markdown isn't the best, but I'll be using the variable p<sub>v</sub><s
 
 I'm not sure these are all correct (particularily part #5), but I think I have the general idea correct. This was a fun problem to think about, especially part #4.
 
-## Question 8
+# Question 8 <a name="8"></a>
 
 I spent around another hour thinking about Question 8, as it was the next logical step up from Question 6. I couldn't come up with an answer, but I had some interesting ideas which may have materialized into an answer with more time or more knowledge about the k-coloring problem.
 
@@ -139,6 +150,6 @@ Ultimately, I suspect that the answer lies with more pre-determined color choice
 
 Overall, this problem was very interesting to think about and try ideas for, even if I didn't get too far. I'd be interested to see the solution.
 
-## Conclusion and Future Work
+## Conclusion and Future Work <a name="conclusion"></a>
 
 I'm happy with my solutions, and felt as though I learned a decent amount. With more time, I think I would have been able to complete most of these problems, particularily the ones requiring Racket and the deeper dive into k-coloring, which were both too time prohibitive for me to really get into in 4 hours.
