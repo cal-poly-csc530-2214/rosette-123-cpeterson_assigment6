@@ -127,4 +127,18 @@ I'm not sure these are all correct (particularily part #5), but I think I have t
 
 ## Question 8
 
+I spent around another hour thinking about Question 8, as it was the next logical step up from Question 6. I couldn't come up with an answer, but I had some interesting ideas which may have materialized into an answer with more time or more knowledge about the k-coloring problem.
 
+I mostly thought about the second part of this problem: reducing the edge variables and clauses to |E|log(k). This felt somewhat possible, where the base of the logarithm might be related to the average connectivity of the graph, and the relationship would more directly model the fact that all connections from a vertex v must have a different color than v. I considered something along the lines of:
+
+p<sub>v</sub><sup>c</sup> → ¬(p<sub>1</sub><sup>c</sup> ∨ p<sub>2</sub><sup>c</sup> ∨ ... ∨ p<sub>w</sub><sup>c</sup>)
+
+Which basically says that if a node is a certain color, all of its neighboring nodes must be different colors. While this is a bit smarter, it doesn't avoid the fundamental issue of having to check the condition for every single color in the graph.
+
+Ultimately, I suspect that the answer lies with more pre-determined color choices. I think that instead of giving every vertex an abitrary color (0, 1, 2, ..., k), you could give a vertex the lowest number possible. This would reduce the number of times colors must be checked and potentially hit the log(k) goal.
+
+Overall, this problem was very interesting to think about and try ideas for, even if I didn't get too far. I'd be interested to see the solution.
+
+## Conclusion and Future Work
+
+I'm happy with my solutions, and felt as though I learned a decent amount. With more time, I think I would have been able to complete most of these problems, particularily the ones requiring Racket and the deeper dive into k-coloring, which were both too time prohibitive for me to really get into in 4 hours.
