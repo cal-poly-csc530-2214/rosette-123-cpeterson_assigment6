@@ -111,3 +111,12 @@ The solver then finds that **x<sub>4</sub> = True** due to the (x<sub>1</sub> �
 Lastly, the solver finds that **x<sub>2</sub> = False** due to the (¬x<sub>2</sub> ∨ x<sub>1</sub>) clause. This would add (x<sub>1</sub> = 0) → (x<sub>2</sub> = 0) to the implication graph.
 
 These assignments do not produce a contradiction and are taken as the proof that the problem is satisfiable. Overall, I enjoyed walking through this process and learning the mechanics behind boolean satisfiability solvers. I think it's interesting that the solvers operate on a (vastly optimized) guess-and-check framework.
+
+## Question 6
+
+The rest of the problems seemed to rely on Question 6.
+
+Github's markdown isn't the best, but I'll be using the variable p<sub>v</sub><sup>c</sup> to represent color(v) = c.
+1. A single vertex being colored could be represented as an OR of it being each of k colors: (p<sub>1</sub><sup>1</sup> ∨ p<sub>1</sub><sup>2</sup> ∨ ... ∨ p<sub>1</sub><sup>k</sup>). These can be AND'd together n times to make sure each vertex has at least one color.
+2. asdf
+3. Both vertexes being the different colors would be represented by (¬p<sub>w</sub><sup>k</sup> ∨ ¬p<sub>v</sub><sup>k</sup>), AND'd together for every (v, w) pair in E and every color in k.
