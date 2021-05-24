@@ -114,9 +114,17 @@ These assignments do not produce a contradiction and are taken as the proof that
 
 ## Question 6
 
-The rest of the problems seemed to rely on Question 6.
+The rest of the problems seemed to rely on Question 6. This problem took me around an hour to figure out, with the time evenly spent across the problems.
 
 Github's markdown isn't the best, but I'll be using the variable p<sub>v</sub><sup>c</sup> to represent color(v) = c.
 1. A single vertex being colored could be represented as an OR of it being each of k colors: (p<sub>1</sub><sup>1</sup> ∨ p<sub>1</sub><sup>2</sup> ∨ ... ∨ p<sub>1</sub><sup>k</sup>). These can be AND'd together n times to make sure each vertex has at least one color.
 2. Two vertexes being different colors could be represented by (¬p<sub>u</sub><sup>a</sup> ∨ ¬p<sub>u</sub><sup>b</sup>), AND'd together for every vertex u in V and every pair of colors a, b (where a and b aren't the same) in C.
 3. Both vertexes being the different colors would be represented by (¬p<sub>w</sub><sup>c</sup> ∨ ¬p<sub>v</sub><sup>c</sup>), AND'd together for every edge (v, w) pair in E and every color c in C.
+4. From a purely satisfiability perspective, I think the limit on colors per vertex is unnecessary. Multi-coloring a vertex purely makes the problem harder (could just single color it any of the chosen colors instead). Therefore, we do not need to enforce it using constraints, as an optimal solution will just avoid the optional multi-coloring when it is necessary to do so, not changing the satisfiability at all.
+5. My constraints are already in CNF. The first one uses |V|k variables and |V| clauses. The third one uses 2|E|k variables and |E|k clauses. Together, they use |V|k + 2|E|k variables and |V| + |E|k clauses.
+
+I'm not sure these are all correct (particularily part #5), but I think I have the general idea correct. This was a fun problem to think about, especially part #4.
+
+## Question 8
+
+
